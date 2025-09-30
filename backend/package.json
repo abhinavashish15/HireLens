@@ -2,11 +2,11 @@
     "name": "video-proctoring-backend",
     "version": "1.0.0",
     "description": "Backend for Video Proctoring System",
-    "main": "dist/server.js",
+    "main": "src/server.ts",
     "scripts": {
         "dev": "nodemon -r tsconfig-paths/register src/server.ts",
-        "build": "tsc",
-        "start": "node dist/server.js",
+        "build": "echo 'No build step needed'",
+        "start": "node -r tsconfig-paths/register src/server.ts",
         "test": "jest"
     },
     "dependencies": {
@@ -43,5 +43,8 @@
         "nodejs"
     ],
     "author": "Video Proctoring Team",
-    "license": "MIT"
+    "license": "MIT",
+    "engines": {
+        "node": ">=18.0.0"
+    }
 }

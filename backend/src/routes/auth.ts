@@ -1,13 +1,17 @@
 /** @format */
 
 import express from "express";
-import User from "@/models/User";
+import User from "../models/User";
 import jwt from "jsonwebtoken";
-import { validate, registerSchema, loginSchema } from "@/middleware/validation";
-import { authenticate } from "@/middleware/auth";
+import {
+  validate,
+  registerSchema,
+  loginSchema,
+} from "../middleware/validation";
+import { authenticate } from "../middleware/auth";
 
 const router = express.Router();
- 
+
 // Generate JWT tokens
 const generateToken = (userId: string): string => {
   return jwt.sign({ userId }, process.env.JWT_SECRET!, {
@@ -36,7 +40,7 @@ router.post(
       }
 
       // Create new users
-      
+
       const user = new User({
         name,
         email,

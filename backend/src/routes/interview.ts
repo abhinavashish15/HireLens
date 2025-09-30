@@ -1,15 +1,15 @@
 /** @format */
 
 import express from "express";
-import Interview from "@/models/Interview";
-import Log from "@/models/Log";
-import User from "@/models/User";
-import { authenticate, authorize, AuthRequest } from "@/middleware/auth";
+import Interview from "../models/Interview";
+import Log from "../models/Log";
+import User from "../models/User";
+import { authenticate, authorize, AuthRequest } from "../middleware/auth";
 import {
   validate,
   scheduleInterviewSchema,
   interviewDecisionSchema,
-} from "@/middleware/validation";
+} from "../middleware/validation";
 
 const router = express.Router();
 

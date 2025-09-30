@@ -3,9 +3,9 @@
 import { Server as SocketIOServer, Socket as SocketIOSocket } from "socket.io";
 import { Server as HTTPServer } from "http";
 import jwt from "jsonwebtoken";
-import User from "@/models/User";
-import Interview from "@/models/Interview";
-import Log from "@/models/Log";
+import User from "../models/User";
+import Interview from "../models/Interview";
+import Log from "../models/Log";
 
 interface AuthenticatedSocket extends SocketIOSocket {
   user?: any;

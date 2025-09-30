@@ -9,11 +9,11 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 // Import routes
-import authRoutes from "@/routes/auth";
-import interviewRoutes from "@/routes/interview";
+import authRoutes from "./routes/auth";
+import interviewRoutes from "./routes/interview";
 
 // Import socket setup
-import { setupSocketIO } from "@/socket";
+import { setupSocketIO } from "./socket";
 
 // Load environment variables
 dotenv.config();
