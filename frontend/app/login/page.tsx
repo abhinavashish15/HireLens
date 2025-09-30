@@ -59,7 +59,7 @@ export default function LoginPage() {
       const response = await authAPI.login(data);
       console.log("Login response:", response);
 
-      if (response.success) {
+      if (response.success && response.data) {
         setAuthToken(response.data.token);
         Cookies.set("user", JSON.stringify(response.data.user), { expires: 7 });
         console.log("Login successful, redirecting to dashboard");

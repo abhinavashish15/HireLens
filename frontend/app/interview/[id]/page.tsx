@@ -54,11 +54,11 @@ export default function InterviewPage({ params }: InterviewPageProps) {
           interviewAPI.getInterviewLogs(params.id),
         ]);
 
-        if (interviewResponse.success) {
+        if (interviewResponse.success && interviewResponse.data) {
           setInterview(interviewResponse.data.interview);
         }
 
-        if (logsResponse.success) {
+        if (logsResponse.success && logsResponse.data) {
           setLogs(logsResponse.data.logs);
         }
       } catch (err: any) {
@@ -74,7 +74,7 @@ export default function InterviewPage({ params }: InterviewPageProps) {
   const handleStartInterview = async () => {
     try {
       const response = await interviewAPI.startInterview(params.id);
-      if (response.success) {
+      if (response.success && response.data) {
         setInterview(response.data.interview);
         setShowVideoCall(true);
       }

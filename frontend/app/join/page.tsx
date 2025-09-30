@@ -57,7 +57,7 @@ export default function JoinInterviewPage() {
 
     try {
       const response = await interviewAPI.getInterviewByToken(sessionId);
-      if (response.success) {
+      if (response.success && response.data) {
         setInterview(response.data.interview);
       } else {
         setError("Invalid session ID or session not found");
@@ -77,7 +77,7 @@ export default function JoinInterviewPage() {
       // Validate session first
       const response = await interviewAPI.getInterviewByToken(data.sessionId);
 
-      if (response.success) {
+      if (response.success && response.data) {
         const interview = response.data.interview;
 
         // Check if interview is in scheduled status

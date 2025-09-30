@@ -72,7 +72,7 @@ export default function RegisterPage() {
       const { confirmPassword, ...registerData } = data;
       const response = await authAPI.register(registerData);
 
-      if (response.success) {
+      if (response.success && response.data) {
         setAuthToken(response.data.token);
         Cookies.set("user", JSON.stringify(response.data.user), { expires: 7 });
         router.push("/dashboard");

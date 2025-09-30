@@ -46,11 +46,11 @@ export default function DashboardPage() {
           interviewAPI.getInterviews({ limit: 5 }),
         ]);
 
-        if (userResponse.success) {
+        if (userResponse.success && userResponse.data) {
           setUser(userResponse.data.user);
         }
 
-        if (interviewsResponse.success) {
+        if (interviewsResponse.success && interviewsResponse.data) {
           setInterviews(interviewsResponse.data.interviews);
         }
       } catch (err: any) {

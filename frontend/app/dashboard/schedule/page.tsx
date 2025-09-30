@@ -75,7 +75,7 @@ export default function ScheduleInterviewPage() {
         duration: data.duration,
       });
 
-      if (response.success) {
+      if (response.success && response.data) {
         setCreatedSession(response.data.interview);
         setSuccess("Interview session created successfully!");
       }
